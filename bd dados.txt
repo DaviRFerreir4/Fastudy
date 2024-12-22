@@ -1,0 +1,13 @@
+insert into tb_materias (nome_materia) values (1, 'Matemática'), (2, 'Língua Portuguesa'), (3, 'Física'), (4, 'Química'), (5, 'Biologia'), (6, 'Geografia'), (7, 'História'), (8, 'Sociologia'), (9, 'Filosofia');
+
+insert into tb_escolas (nome_escola) values ('ETEC Dep. Ary de Camargo Pedroso'), ('Colégio Técnico Industrial de Piracicaba - COTIP');
+
+insert into tb_usuarios (nome_completo, nome_usuario, cdg_escolar, email, senha) values ('Davi Rodrigues Ferreira', 'User teste', 1, 'davi.rferreira@gmail.com', '1050531293ad771dff46a45b644e5fb35ecdb90473278a1d4181260872e3c875');
+
+insert into tb_usuarios values ('Victor Henrique Bordinhon', 'Pudim side', 2, 'victorhenrique@hotmail.com', 'fe52d262c8dc10d9be8821b78bc725bd52104d3acb19b3e46ea39f9e6eb97f76');
+
+insert into tb_conteudos values (1, 1, 'Geometria'), (2, 1, 'Porcentagem'), (3, 1, 'Fração'), (4, 1, 'Logaritimo'),
+(5, 1, 'Potenciação'), (6, 1, 'teste6'), (7, 1, 'teste7'), (8, 1, 'teste8'), (9, 1, 'teste9'), (10, 1, 'teste10'), (11, 1, 'teste11'),
+(12, 1, 'teste12'), (13, 1, 'teste13'), (14, 1, 'teste14'), (15, 1, 'teste15'), (16, 1, 'teste16'), (17, 1, 'teste17'), (18, 1, 'teste18'),
+(19, 1, 'teste19'), (20, 1, 'teste20'), (21, 1, 'teste21'), (22, 1, 'teste22'), (23, 1, 'teste23'), (24, 1, 'teste24'), (25, 1, 'teste25'),
+(1, 2, 'Redação');

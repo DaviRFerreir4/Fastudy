@@ -1,0 +1,31 @@
+﻿aluno
+	nome completo
+	cpf
+	nome de usuario
+	codigo escolar
+	email
+	senha
+
+perguntas - 
+	codigo da materia
+	codigo do conteúdo
+	numero pergunta
+	dados da pergunta (json)
+
+escolas - 
+	codigo escolar
+	nome da escola
+
+matéria - 
+	codigo da materia
+	nome da materia
+
+conteudo - 
+	codigo da materia
+	codigo do conteudo
+	nome do conteudo
+
+perguntas respondidas -
+	nome do usuario
+	codigo da pergunta
+	codigo da materia

@@ -1,0 +1,69 @@
+create sequence inc_cdg_escolar
+	increment 1
+	minvalue 1
+	maxvalue 2147483647
+	start 1;
+
+create sequence inc_cdg_conteudo
+	increment 1
+	minvalue 1
+	maxvalue 2147483647
+	start 1;
+
+create sequence inc_cdg_pergunta
+	increment 1
+	minvalue 1
+	maxvalue 2147483647
+	start 1;
+
+create table tb_escolas (
+	cdg_escolar int default nextval('inc_cdg_escolar'::regclass),
+	nome_escolar varchar(200) not null,
+	primary key(cdg_escolar)
+)
+
+create table tb_materias (
+	cdg_materia int not null,
+	nome_materia varchar(10) not null,
+	primary key(cdg_materia)
+)
+
+create table tb_conteudos (
+	cdg_conteudo int default nextval('inc_cdg_conteudo'::regclass),
+	cdg_materia int not null,
+	nome_conteudo varchar(100) not null,
+	foreign key(cdg_materia) references tb_materias(cdg_materia),
+	primary key(cdg_conteudo)
+)
+
+create table tb_perguntas ( # TA FALTANDO
+	cdg_materia int not null,
+	cdg_conteudo int not null,
+	cdg_pergunta int default nextval('inc_cdg_pergunta'::regclass),
+	dados_pergunta json not null,
+	foreign key(cdg_materia) references tb_materias(cdg_materia),
+	foreign key(cdg_conteudo) references tb_conteudos(cdg_conteudo),
+	primary key(cdg_pergunta)
+)
+
+create table tb_alunos (
+	nome_completo varchar(200) not null,
+	nome_usuario varchar(10) not null,
+	cdg_escolar int not null,
+	email varchar(200) not null,
+	senha varchar(64) not null,
+	foreign key(cdg_escolar) references tb_escolas(cdg_escolar),
+	primary key(nome_usuario)
+)
+
+create table tb_per_respondidas (
+	nome_completo varchar(200) not null,
+	cdg_pergunta int not null,
+	cdg_conteudo int not null,
+	cdg_materia int not null,
+	foreign key(nome_completo) references tb_usuarios(nome_completo),
+	foreign key(cdg_pergunta) references tb_perguntas(cdg_pergunta),
+	foreign key(cdg_conteudo) references tb_conteudos(cdg_conteudo),
+	foreign key(cdg_materia) references tb_materias(cdg_materia),
+	primary key (nome_completo, cdg_pergunta)
+)
